@@ -13,7 +13,18 @@ NAME            CHART VERSION   APP VERSION
 openbao/openbao 0.4.0           v2.0.0-alpha20240329
 ```
 
+
+
 # Install OpenBao Using Helm
+```
+helm install openbao openbao/openbao \
+  --namespace rafay \
+  --create-namespace \
+  --set "server.ha.enabled=true" \
+  --set "server.dataStorage.storageClass=gp2"
+```
+
+
 Default (Standalone) — single server, file storage (not production-ready):
 ```
 helm install openbao openbao/openbao
